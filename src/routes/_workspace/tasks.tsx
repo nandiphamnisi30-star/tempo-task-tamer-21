@@ -16,7 +16,7 @@ import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-export const Route = createFileRoute("/_authenticated/tasks")({
+export const Route = createFileRoute("/_workspace/tasks")({
   head: () => ({
     meta: [
       { title: "AI Task Planner — Tempo" },

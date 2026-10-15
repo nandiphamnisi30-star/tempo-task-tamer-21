@@ -12,7 +12,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 
-export const Route = createFileRoute("/_authenticated/email")({
+export const Route = createFileRoute("/_workspace/email")({
   head: () => ({
     meta: [
       { title: "Smart Email Writer — Tempo" },

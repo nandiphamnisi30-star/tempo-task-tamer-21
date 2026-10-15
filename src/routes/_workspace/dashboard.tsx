@@ -7,7 +7,7 @@ import { PageHeader } from "@/components/AppShell";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
 
-export const Route = createFileRoute("/_authenticated/dashboard")({
+export const Route = createFileRoute("/_workspace/dashboard")({
   head: () => ({
     meta: [
       { title: "Dashboard — Tempo" },

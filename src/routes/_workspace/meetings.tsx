@@ -10,7 +10,7 @@ import { PageHeader } from "@/components/AppShell";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 
-export const Route = createFileRoute("/_authenticated/meetings")({
+export const Route = createFileRoute("/_workspace/meetings")({
   head: () => ({
     meta: [
       { title: "Meeting Notes Summarizer — Tempo" },
