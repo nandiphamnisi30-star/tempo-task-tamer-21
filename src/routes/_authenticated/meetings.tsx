@@ -52,14 +52,15 @@ function MeetingsPage() {
   });
 
   const addTask = async (i: number) => {
-    const a = summary!.action_items[i];
+    const a = summary?.action_items[i];
+    if (!a || !summary) return;
     const { error } = await supabase.from("tasks").insert({
       title: a.task,
-      description: [a.owner && `Owner: ${a.owner}`, a.deadline && `Deadline: ${a.deadline}`, `From: ${summary!.title}`].filter(Boolean).join(" · "),
+      description: [a.owner && `Owner: ${a.owner}`, a.deadline && `Deadline: ${a.deadline}`, `From: ${summary.title}`].filter(Boolean).join(" · "),
       due_date: a.deadline && ISO.test(a.deadline) ? a.deadline : null,
       source: "meeting",
     });
-    if (error) return toast.error(error.message);
+    if (error) { toast.error(error.message); return; }
     setAdded((s) => new Set(s).add(i));
     qc.invalidateQueries({ queryKey: ["tasks"] });
     toast.success("Added to your tasks");

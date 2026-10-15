@@ -60,7 +60,7 @@ function TasksPage() {
         source: "ai",
       })),
     );
-    if (error) return toast.error(error.message);
+    if (error) { toast.error(error.message); return; }
     toast.success(`${plan.length} tasks added`);
     setPlan(null);
     setDump("");
@@ -71,7 +71,7 @@ function TasksPage() {
     e.preventDefault();
     if (!title.trim()) return;
     const { error } = await supabase.from("tasks").insert({ title: title.trim(), due_date: due || null, priority: prio });
-    if (error) return toast.error(error.message);
+    if (error) { toast.error(error.message); return; }
     setTitle(""); setDue("");
     refresh();
   };
